@@ -41,6 +41,6 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
-    // marco is gay
+    // hello there
 
 }
