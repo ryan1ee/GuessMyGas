@@ -14,41 +14,43 @@ import android.support.design.widget.BaseTransientBottomBar;
 import android.widget.Button;
 import android.view.View;
 import android.content.SharedPreferences;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
-
-    private TextView mTextMessage;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    Snackbar.make(findViewById(android.R.id.content), "Welcome to Dashboard!", Snackbar.LENGTH_LONG).show();
-                    return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    Snackbar.make(findViewById(android.R.id.content), "Welcome to Notifications!", Snackbar.LENGTH_LONG).show();
-                    return true;
-            }
-            return false;
-        }
-    };
+//
+//    private TextView mTextMessage;
+//    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+//            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+//
+//        @Override
+//        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//            switch (item.getItemId()) {
+//                case R.id.navigation_home:
+//                    mTextMessage.setText(R.string.title_home);
+//                    return true;
+//                case R.id.navigation_dashboard:
+//                    mTextMessage.setText(R.string.title_dashboard);
+//                    Snackbar.make(findViewById(android.R.id.content), "Welcome to Dashboard!", Snackbar.LENGTH_LONG).show();
+//                    return true;
+//                case R.id.navigation_notifications:
+//                    mTextMessage.setText(R.string.title_notifications);
+//                    Snackbar.make(findViewById(android.R.id.content), "Welcome to Notifications!", Snackbar.LENGTH_LONG).show();
+//                    return true;
+//            }
+//            return false;
+//        }
+//    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        configureTripsButton();
+
+//        mTextMessage = (TextView) findViewById(R.id.message);
+//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         final EditText mEditText1 = findViewById(R.id.editText1);
         final EditText mEditText2 = findViewById(R.id.editText2);
@@ -56,9 +58,13 @@ public class MainActivity extends AppCompatActivity {
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                // Code here executes on main thread after user presses button
-                storeMileage(Float.parseFloat(mEditText1.getText().toString()));
-                storeName(mEditText2.getText().toString());
+//                // Code here executes on main thread after user presses button
+//                try {
+                    storeMileage(Float.parseFloat(mEditText1.getText().toString()));
+//                } catch (NumberFormatException e) {
+//                    throw e;
+//                } finally {
+                    storeName(mEditText2.getText().toString());
             }
         });
 
@@ -80,10 +86,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void storeMileage(Float mileage) {
-        SharedPreferences pref = getSharedPreferences("GMG_mileage", MODE_PRIVATE);
-        SharedPreferences.Editor editor = pref.edit();
-        editor.putFloat("mileage", mileage);
-        editor.apply();
+            SharedPreferences pref = getSharedPreferences("GMG_mileage", MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putFloat("mileage", mileage);
+            editor.apply();
+
     }
 
     private void storeName(String name) {
@@ -98,5 +105,15 @@ public class MainActivity extends AppCompatActivity {
         String name = pref.getString("username", "Username not found!");
         System.out.println(name);
         return name;
+    }
+
+    private void configureTripsButton() {
+        Button tripButton = (Button) findViewById(R.id.button3);
+        tripButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Trips.class));
+            }
+        });
     }
 }
