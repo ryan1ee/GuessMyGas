@@ -18,8 +18,8 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundImage" value="F:\Marco\Desktop\GuessMyGas Icon\SVG\Background.svg" />
-                                      <entry key="foregroundImage" value="F:\Marco\Desktop\GuessMyGas Icon\SVG\Foreground.svg" />
+                                      <entry key="backgroundImage" value="$PROJECT_DIR$/../../GuessMyGas Icon/SVG/Background.svg" />
+                                      <entry key="foregroundImage" value="$PROJECT_DIR$/../../GuessMyGas Icon/4x/Foregroundxxxhdpi.png" />
                                     </map>
                                   </option>
                                 </PersistentState>
