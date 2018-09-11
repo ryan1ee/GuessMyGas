@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bottombaritem_map"
+        android:icon="@drawable/ic_location_white_24dp"
+        android:title="Map"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/bottombaritem_trips"
+        android:icon="@drawable/ic_car_white_24dp"
+        android:title="Trips"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/bottombaritem_settings"
+        android:icon="@drawable/ic_settings_white_24dp"
+        android:title="Settings"
+        app:showAsAction="ifRoom"/>
+
+
+</menu>

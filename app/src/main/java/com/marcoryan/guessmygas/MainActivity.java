@@ -41,10 +41,15 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //    };
 
+    private BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        bottomNavigationView = (BottomNavigationView)
+        findViewById(R.id.bottombaritem_trips);
 
         configureTripsButton();
 
