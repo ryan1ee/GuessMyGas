@@ -8,6 +8,7 @@
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
+
     <Button
         android:id="@+id/button"
         style="@style/Widget.AppCompat.Button"
@@ -79,5 +80,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <!--<android.support.design.widget.BottomNavigationView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--app:itemBackground="?attr/colorPrimary"-->
+        <!--app:itemIconTint="@android:color/white"-->
+        <!--app:itemTextColor="@android:color/white"-->
+        <!--app:menu="@menu/bottombar_menu"/>-->
 
 </android.support.constraint.ConstraintLayout>
