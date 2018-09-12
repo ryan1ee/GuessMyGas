@@ -8,7 +8,7 @@
         <!--<item name="colorAccent">@color/colorAccent</item>-->
     <!--</style>-->
 
-    <style name="AppTheme" parent="android:Theme.Material.Light" >
+    <style name="AppTheme" parent="Theme.AppCompat" >
         <item name="colorPrimary">@color/MaterialOrange</item>
         <item name="colorPrimaryDark">@color/MaterialOrangeDark</item>
         <item name="android:colorBackground">@color/MaterialOrange</item>

@@ -49,7 +49,29 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigationView = (BottomNavigationView)
-        findViewById(R.id.bottombaritem_trips);
+        findViewById(R.id.bottom_nav);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()){
+                            case R.id.bottombaritem_map:
+                                //TODO
+                                return true;
+
+
+                            case R.id.bottombaritem_trips:
+                                //TODO
+                                return true;
+
+                            case R.id.bottombaritem_settings:
+                                //TODO
+                                return true;
+                        }
+                        return false;
+                    }
+                });
 
         configureTripsButton();
 
