@@ -16,8 +16,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:itemBackground="?attr/colorPrimary"
-        app:itemIconTint="@android:color/white"
-        app:itemTextColor="@android:color/white"
+        app:itemIconTint="@drawable/selector_bottombar_item"
+        app:itemTextColor="@drawable/selector_bottombar_item"
         app:menu="@menu/bottombar_menu"
         tools:layout_editor_absoluteY="151dp" />
 
@@ -102,8 +102,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 
 </android.support.constraint.ConstraintLayout>
 
