@@ -35,5 +35,4 @@ public class Trips extends AppCompatActivity {
             }
         });
     }
-
 }
