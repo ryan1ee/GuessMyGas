@@ -1,6 +1,6 @@
 package com.marcoryan.guessmygas;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.IntentFilter;
 import android.content.Intent;
 import android.bluetooth.*;

@@ -1,135 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="81dp">
+    android:layout_height="match_parent">
 
-    <FrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/activity_bottom_bar"
+    <!--ADD CONTENT ABOVE BOTTOM BAR-->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.suleiman.material.activities.BottomBarActivity">
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:labelVisibilityMode="unlabeled"
+        app:elevation="5dp"
+        app:menu="@menu/bottombar_menu"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"/>
 
-        <FrameLayout
-            android:id="@+id/frame_fragmentholder"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="?attr/actionBarSize"/>
-
-        <!--<android.support.design.widget.BottomNavigationView-->
-            <!--android:id="@+id/bottom_nav"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--app:itemBackground="?attr/colorPrimary"-->
-            <!--app:itemIconTint="@drawable/selector_bottombar_item"-->
-            <!--app:itemTextColor="@drawable/selector_bottombar_item"-->
-            <!--app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--app:layout_constraintLeft_toLeftOf="parent"-->
-            <!--app:layout_constraintRight_toRightOf="parent"-->
-            <!--app:menu="@menu/bottombar_menu"-->
-            <!--tools:layout_editor_absoluteY="151dp" />-->
-
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/bottom_nav"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            app:itemBackground="?attr/colorPrimary"
-            app:itemIconTint="@drawable/selector_bottombar_item"
-            app:itemTextColor="@drawable/selector_bottombar_item"
-            app:menu="@menu/bottombar_menu"/>
-    </FrameLayout>
-
-    <!--<Button-->
-        <!--android:id="@+id/button"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginEnd="63dp"-->
-        <!--android:backgroundTint="@android:color/white"-->
-        <!--android:backgroundTintMode="multiply"-->
-        <!--android:textColor="@color/MaterialOrange"-->
-        <!--android:text="Save"-->
-        <!--app:layout_constraintBaseline_toBaselineOf="@+id/button2"-->
-        <!--app:layout_constraintEnd_toEndOf="@+id/button3" />-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/textView"-->
-        <!--android:textColor="@android:color/white"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginBottom="4dp"-->
-        <!--android:text="Mileage (L/100km)"-->
-        <!--app:layout_constraintBottom_toTopOf="@+id/editText1"-->
-        <!--app:layout_constraintEnd_toEndOf="@+id/editText1"-->
-        <!--app:layout_constraintStart_toStartOf="@+id/editText1" />-->
-
-    <!--<EditText-->
-        <!--android:id="@+id/editText1"-->
-        <!--android:textColor="@android:color/white"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginBottom="50dp"-->
-        <!--android:ems="10"-->
-        <!--android:inputType="textPersonName"-->
-        <!--app:layout_constraintBottom_toTopOf="@+id/button3"-->
-        <!--app:layout_constraintStart_toStartOf="@+id/editText2" />-->
-
-    <!--<Button-->
-        <!--android:id="@+id/button2"-->
-        <!--android:backgroundTint="@android:color/white"-->
-        <!--android:backgroundTintMode="multiply"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginBottom="139dp"-->
-        <!--android:layout_marginStart="38dp"-->
-        <!--android:text="Get"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintStart_toEndOf="@+id/button" />-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/textView2"-->
-        <!--android:textColor="@android:color/white"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginBottom="4dp"-->
-        <!--android:text="Enter your name"-->
-        <!--app:layout_constraintBottom_toTopOf="@+id/editText2"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent" />-->
-
-    <!--<EditText-->
-        <!--android:id="@+id/editText2"-->
-        <!--android:textColor="@android:color/white"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginBottom="34dp"-->
-        <!--android:ems="10"-->
-        <!--android:inputType="textPersonName"-->
-        <!--app:layout_constraintBottom_toTopOf="@+id/textView"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent" />-->
-
-    <!--<Button-->
-        <!--android:id="@+id/button3"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginBottom="44dp"-->
-        <!--android:text="My Trips"-->
-        <!--android:backgroundTint="@android:color/white"-->
-        <!--android:backgroundTintMode="multiply"-->
-        <!--app:layout_constraintBottom_toTopOf="@+id/button"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintHorizontal_bias="0.498"-->
-        <!--app:layout_constraintStart_toStartOf="parent" />-->
-
-
-
-</android.support.constraint.ConstraintLayout>
+</FrameLayout>
 
