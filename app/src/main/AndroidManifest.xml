@@ -19,10 +19,6 @@
         </activity>
         <activity android:name=".Trips" />
         <activity android:name=".TripDetails"></activity>
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyATXWzyWT9IgS7-rRGS60_wPf9twiPzZQw"/>
     </application>
 
 </manifest>
