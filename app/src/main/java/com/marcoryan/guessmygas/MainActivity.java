@@ -28,10 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
 
-        fm.beginTransaction().add(R.id.main_container, mapFragment).hide(mapFragment).commit();
-        fm.beginTransaction().add(R.id.main_container, tripsFragment).commit();
-        fm.beginTransaction().add(R.id.main_container, settingsFragment).hide(settingsFragment).commit();
-
         // handle bottom navigation clicks
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -57,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+        fm.beginTransaction().add(R.id.main_container, mapFragment).hide(mapFragment).commit();
+        fm.beginTransaction().add(R.id.main_container, tripsFragment).commit();
+        fm.beginTransaction().add(R.id.main_container, settingsFragment).hide(settingsFragment).commit();
 
     }
 }
