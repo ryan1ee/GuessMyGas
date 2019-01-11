@@ -27,36 +27,42 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_bar_item_trips);
 
         // handle bottom navigation clicks
-        bottomNavigationView.setOnNavigationItemSelectedListener(
-                new BottomNavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.bottom_bar_item_map:
-                                fm.beginTransaction().hide(active).show(mapFragment).commit();
-                                active = mapFragment;
-                                return true;
-
-                            case R.id.bottom_bar_item_trips:
-                                fm.beginTransaction().hide(active).show(tripsFragment).commit();
-                                active = tripsFragment;
-                                return true;
-
-                            case R.id.bottom_bar_item_settings:
-                                fm.beginTransaction().hide(active).show(settingsFragment).commit();
-                                active = settingsFragment;
-                                return true;
-                        }
-                        return false;
-                    }
-                });
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         fm.beginTransaction().add(R.id.main_container, mapFragment).hide(mapFragment).commit();
-        fm.beginTransaction().add(R.id.main_container, tripsFragment).commit();
         fm.beginTransaction().add(R.id.main_container, settingsFragment).hide(settingsFragment).commit();
+        fm.beginTransaction().add(R.id.main_container, tripsFragment).commit();
 
     }
+
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                    switch (menuItem.getItemId()) {
+                        case R.id.bottom_bar_item_map:
+                            fm.beginTransaction().hide(active).show(mapFragment).commit();
+                            active = mapFragment;
+                            return true;
+
+                        case R.id.bottom_bar_item_trips:
+                            fm.beginTransaction().hide(active).show(tripsFragment).commit();
+                            active = tripsFragment;
+                            return true;
+
+                        case R.id.bottom_bar_item_settings:
+                            fm.beginTransaction().hide(active).show(settingsFragment).commit();
+                            active = settingsFragment;
+                            return true;
+                    }
+                    return false;
+            }
+        };
 }
+
+
 
